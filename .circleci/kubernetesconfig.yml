@@ -25,6 +25,6 @@ jobs:
           az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1 --overwrite-existing
           az account list
-          kubectl config view
+          cat ./kube/config
           latestbuild = $TAG
           kubectl apply -f microservice-deployment.yaml:$latestbuild
