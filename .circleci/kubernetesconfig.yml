@@ -22,6 +22,9 @@ jobs:
           docker build -t mounidocker/microservice-one:$TAG .      # (4)
           docker login -u $DOCKER_USER -p $DOCKER_PASS         # (5)
           docker push mounidocker/microservice-one:$TAG
-          az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
+          az login --service-principal --username "2953a566-55eb-4d9a-a776-ab763de46b50" --password "d6c46999-e42c-4990-b81e-a16b265a6482" --tenant "f14cc82e-80b6-4f74-b91d-7fafc039c0b5"
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1
           kubectl apply -f microservice-deployment.yaml
+
+
+        
