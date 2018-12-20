@@ -26,5 +26,5 @@ jobs:
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1 --overwrite-existing
           az account list
           cat ./kube/config
-          latestbuild = $TAG
-          kubectl apply -f microservice-deployment.yaml:$latestbuild
+          #latestbuild = $TAG
+          kubectl apply -f microservice-deployment.yaml
