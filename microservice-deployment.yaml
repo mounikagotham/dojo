@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice1-deployment
+  labels:
+    app: microservice-one
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microservice-one
+  template:
+    metadata:
+      labels:
+        app: microservice-one
+    spec:
+      containers:
+      - name: microservice-one
+        image: mounidocker/microservice-one
+        ports:
+        - containerPort: 8001
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: microservice-one-service
+  labels:
+    app: microservice-one
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8001
+  selector:
+    app: microservice-one
+
+       
