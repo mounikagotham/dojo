@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-one
-        image: mounidocker/microservice-one
+        image: mounidocker/microservice-one:12
         ports:
         - containerPort: 8001
 ---
