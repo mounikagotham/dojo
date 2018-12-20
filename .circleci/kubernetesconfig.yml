@@ -23,7 +23,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASS         # (5)
           docker push mounidocker/microservice-one:$TAG
           az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
-          az aks get-credentials --resource-group acctestRG1 --name acctestaks1 --overwrite-existing
+          az aks get-credentials --resource-group acctestRG1 --name acctestaks1
           az account list
           cat ./kube/config
           #latestbuild = $TAG
